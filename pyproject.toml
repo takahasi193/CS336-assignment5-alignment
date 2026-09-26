@@ -35,19 +35,16 @@ include = ["cs336_alignment*"]
 
 [tool.uv]
 package = true
-environments = [
-    "sys_platform == 'darwin' and platform_machine == 'arm64'",
-    "sys_platform == 'linux' and platform_machine == 'x86_64'",
-]
+python-preference = "managed"
 
-[tool.uv.sources]
-torch = [
-    { index = "pytorch-cu129", extra = "gpu", marker = "sys_platform == 'linux'" },
-]
-[[tool.uv.index]]
-name = "pytorch-cu129"
-url = "https://download.pytorch.org/whl/cu129"
-explicit = true
+# [tool.uv.sources]
+# torch = [
+#    { index = "pytorch-cu129", extra = "gpu", marker = "sys_platform == 'linux'" },
+# ]
+# [[tool.uv.index]]
+# name = "pytorch-cu129"
+# url = "https://download.pytorch.org/whl/cu129"
+# explicit = true
 
 [tool.pytest.ini_options]
 log_cli = true
